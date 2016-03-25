@@ -139,7 +139,7 @@ private:
 
     uint8_t _numlines;
     uint8_t _currline;
-	
+
 	uint8_t _i2c_addr;
 };
 

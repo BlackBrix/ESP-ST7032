@@ -1,8 +1,8 @@
 /*
   ST7032.cpp - Arduino LiquidCrystal compatible library
-  
+
   Original source is Arduino LiquidCrystal liblary
-  
+
   Author:  tomozh@gmail.com
   License: MIT
 
@@ -10,7 +10,7 @@
     2014.10.13 コントラスト値のbit7がBONビットに影響する不具合を修正
     2014.08.23 コンストラクタでI2Cアドレスを設定可能にした
     2013.05.21 1st release
-  
+
  ------------------------
   Arduino        ST7032i
  ------------------------
@@ -19,7 +19,7 @@
   A4(SDA) --*-- SDA
   A5(SCL) --*-- SCL
   GND     ----- GND
-  
+
   *... 10Kohm pull-up
  ------------------------
 
@@ -78,7 +78,7 @@ ST7032::ST7032(int i2c_addr)
 void ST7032::begin(uint8_t cols, uint8_t lines, uint8_t dotsize) {
 
   _displayfunction  = LCD_8BITMODE | LCD_1LINE | LCD_5x8DOTS;
-  
+
   if (lines > 1) {
     _displayfunction |= LCD_2LINE;
   }
@@ -89,7 +89,7 @@ void ST7032::begin(uint8_t cols, uint8_t lines, uint8_t dotsize) {
   if ((dotsize != 0) && (lines == 1)) {
     _displayfunction |= LCD_5x10DOTS;
   }
-  
+
   Wire.begin();
   delay(40);               // Wait time >40ms After VDD stable
 
@@ -159,7 +159,7 @@ void ST7032::setCursor(uint8_t col, uint8_t row)
   if ( row > _numlines ) {
     row = _numlines-1;    // we count rows starting w/0
   }
-  
+
   command(LCD_SETDDRAMADDR | (col + row_offsets[row]));
 }
 
@@ -245,4 +245,3 @@ size_t ST7032::write(uint8_t value) {
 
   return 1;
 }
-
