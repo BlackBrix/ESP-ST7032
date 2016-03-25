@@ -83,6 +83,7 @@
 #define LCD_RAB_3_00            0x06        // 1+(Rb/Ra)=3.00
 #define LCD_RAB_3_75            0x07        // 1+(Rb/Ra)=3.75
 
+#define DEFAULT_CONTRAST        40
 
 class ST7032 : public Print {
 public:
@@ -90,7 +91,7 @@ public:
 
     void begin(uint8_t cols, uint8_t rows, uint8_t charsize = LCD_5x8DOTS);
 
-    void setContrast(uint8_t cont);
+    void setContrast(uint8_t cont = DEFAULT_CONTRAST);
     void setIcon(uint8_t addr, uint8_t bit);
     void clear();
     void home();
