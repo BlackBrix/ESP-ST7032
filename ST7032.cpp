@@ -124,6 +124,14 @@ void ST7032::setContrast(uint8_t cont)
   normalFunctionSet();
 }
 
+void ST7032::setContrast5V(uint8_t cont)
+{
+  extendFunctionSet();
+  command(LCD_EX_CONTRASTSETL | (cont & 0x0f));                     // Contrast set
+  command(LCD_EX_POWICONCONTRASTH | LCD_ICON_ON | LCD_BOOST_OFF | ((cont >> 4) & 0x03)); // Power, ICON, Contrast control
+  normalFunctionSet();
+}
+
 void ST7032::setIcon(uint8_t addr, uint8_t bit) {
   extendFunctionSet();
   command(LCD_EX_SETICONRAMADDR | (addr & 0x0f));                       // ICON address

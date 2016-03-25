@@ -92,6 +92,7 @@ public:
     void begin(uint8_t cols, uint8_t rows, uint8_t charsize = LCD_5x8DOTS);
 
     void setContrast(uint8_t cont = DEFAULT_CONTRAST);
+		void setContrast5V(uint8_t cont = DEFAULT_CONTRAST);
     void setIcon(uint8_t addr, uint8_t bit);
     void clear();
     void home();
