@@ -64,22 +64,22 @@ MIT
  ------------------------
   Arduino        ST7032
  ------------------------
-  3.3V    --+-- VDD
-            +-- -RES
-  A4(SDA) --*-- SDA
-  A5(SCL) --*-- SCL
-  GND     ----- GND
+  3.3V    --+-- VDD  
+            +-- -RES  
+  A4(SDA) --*-- SDA  
+  A5(SCL) --*-- SCL  
+  GND     ----- GND  
   
-  *... 10Kohm pull-up
+  *... 10Kohm pull-up  
  ------------------------
 
-If you want to reliably reset the LCD, connect the RST pin to Arduino's
-Please control with empty terminals. (Low: reset)
+If you want to reliably reset the LCD, connect the RST pin to Arduino's  
+Please control with empty terminals. (Low: reset)  
  
-2) Copy the ST7032 folder to Arduino's libraries folder
+2) Copy the ST7032 folder to Arduino's libraries folder  
 
 
-There are two types of member functions unique to ST7032:
+There are two types of member functions unique to ST7032:  
 
     constructor
        ST7032 lcd(int i2c_addr);
@@ -95,44 +95,44 @@ There are two types of member functions unique to ST7032:
             addr : Icon address (0 .. 15)
             bit  : Icon display bit (0x00 .. 0x1F)
 
-Easy to use:
-
-#include <Wire.h>
-#include <ST7032.h>
-
-ST7032 lcd;
-
-lcd.setContrast(30);            // Contrast setting
-lcd.print("hello, world!");
-
-
-When needed to specify the slave address:
-
-ST7032 lcd(0x3E);
-
+Easy to use:  
+  
+#include <Wire.h>  
+#include <ST7032.h>  
+  
+ST7032 lcd;  
+  
+lcd.setContrast(30);            // Contrast setting  
+lcd.print("hello, world!");  
+  
+  
+When needed to specify the slave address:  
+  
+ST7032 lcd(0x3E);  
+  
 
 
 -------------------------------------------------------------
  file structure:
 -------------------------------------------------------------
 
-ST7032\
-    keywords.txt
-    ST7032.cpp              ST7032 Library
-    ST7032.h                ST7032 Library
-    examples\
-        Icon                Icon display demo for Strawberry Linux SB1602B
-        Autoscroll          (*)
-        Blink               (*)
-        Cursor              (*)
-        CustomCharacter     (*)
-        Display             (*)
-        HelloWorld          (*)
-        Scroll              (*)
-        SerialDisplay       (*)
-        setCursor           (*)
-        TextDirection       (*)
-
-        (*) examples taken from original Arduino LiquidCrystal liblary modified for ST7032
+ST7032\  
+    keywords.txt  
+    ST7032.cpp              ST7032 Library  
+    ST7032.h                ST7032 Library  
+    examples\  
+        Icon                Icon display demo for Strawberry Linux SB1602B  
+        Autoscroll          (*)  
+        Blink               (*)  
+        Cursor              (*)  
+        CustomCharacter     (*)  
+        Display             (*)  
+        HelloWorld          (*)  
+        Scroll              (*)  
+        SerialDisplay       (*)  
+        setCursor           (*)  
+        TextDirection       (*)  
+  
+        (*) examples taken from original Arduino LiquidCrystal liblary modified for ST7032  
 
 
