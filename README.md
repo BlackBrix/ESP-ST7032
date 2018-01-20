@@ -1,30 +1,33 @@
+Arduino library for I²C-LCD-Displays with controller ST7032i  
+
 forked from [weizenbock/ESP-ST7032](https://github.com/weizenbock/ESP-ST7032)  
 which is forked from [tomozh/arduino_ST7032](https://github.com/tomozh/arduino_ST7032)  
   
   
-the original readme.md is as follows:  
+the (translated) original readme.md is as follows:  
+
 --------------------------------------------------
 
 ST7032 - Arduino LiquidCrystal compatible library
 http://ore-kb.net/archives/195
 
 -------------------------------------------------------------
- 概要
+ Overview
 -------------------------------------------------------------
 
-コントローラに ST7032i を使った I2C LCD ディスプレイの
-Arduino ライブラリです。
-LiquidCrystal ライブラリのソースを元に作成しています。
-LiquidCrystal ライブラリのメンバ関数と互換性があるため、
-クラスを差し替えるだけで使用できます。
+I²C LCD display using ST7032i as controller
+It is an Arduino library.
+It is based on the original Arduino LiquidCrystal library source.
+Because it is compatible with the member functions of the original Arduino LiquidCrystal library,
+you can use it just by replacing the class.
 
-動作確認済み
+Operation has been confirmed with:
 
     SB1602B             Strawberry Linux
     SB0802G             Strawberry Linux
-    AQM0802A-RN-GBW     秋月電子通商
+    AQM0802A-RN-GBW     http://akizukidenshi.com
 
-動作すると思われるもの
+What seems to work:
 
     SB1602E             Strawberry Linux
     LCD16X2-I2C         aitendo
@@ -33,30 +36,30 @@ LiquidCrystal ライブラリのメンバ関数と互換性があるため、
 
 
 -------------------------------------------------------------
- 更新履歴
+Change log:
 -------------------------------------------------------------
 
-2014.10.13 コントラスト値のbit7がBONビットに影響する不具合を修正
-2014.08.23 コンストラクタでI2Cアドレスを設定可能にした
+2014.10.13 Fixed a problem that the contrast value bit 7 affects the BON bit
+2014.08.23 I made it possible to set the I2C address in the constructor
 2013.05.21 1st release
 
 
 -------------------------------------------------------------
- ライセンス
+ License:
 -------------------------------------------------------------
 
-作成者：
+Author:  
 tomozh (tomozh@gmail.com)
 
-ライセンス形態：
+License form：
 MIT
 
 
 -------------------------------------------------------------
- 使用方法
+ Instructions:
 -------------------------------------------------------------
 
-1) モジュールと Arduino を以下のように接続します
+1) Connect LCD-module and Arduino as follows
 
  ------------------------
   Arduino        ST7032
@@ -70,55 +73,55 @@ MIT
   *... 10Kohm pull-up
  ------------------------
 
-LCDを確実にリセットしたい場合は、RST 端子を Arduino の
-空き端子で制御してください。(Low:リセット)
+If you want to reliably reset the LCD, connect the RST pin to Arduino's
+Please control with empty terminals. (Low: reset)
  
-2) ST7032 フォルダを Arduino の libraries フォルダにコピーします
+2) Copy the ST7032 folder to Arduino's libraries folder
 
 
-ST7032 独自のメンバ関数は以下の2種類です。
+There are two types of member functions unique to ST7032:
 
-    コンストラクタ
+    constructor
        ST7032 lcd(int i2c_addr);
-            i2c_addr: スレーブアドレス
-            コンストラクタ引数を省略した場合は 0x3E
+            i2c_addr: Slave address
+            if the constructor argument is omitted: default 0x3E
 
-    コントラスト設定
+    Contrast setting
         void setContrast(uint8_t cont)
-            cont: コントラスト値 (0～63)
+            cont: Contrast value (0 .. 63)
     
-    アイコン表示 (※アイコン表示機能の無いLCDは無効)
+    Icon display (on LCDs without icon display function: this is ineffective)
         void setIcon(uint8_t addr, uint8_t bit)
-            addr : アイコンアドレス (0～15)
-            bit  : アイコン表示ビット (0x00～0x1F)
+            addr : Icon address (0 .. 15)
+            bit  : Icon display bit (0x00 .. 0x1F)
 
-簡単な使い方
+Easy to use:
 
 #include <Wire.h>
 #include <ST7032.h>
 
 ST7032 lcd;
 
-lcd.setContrast(30);            // コントラスト設定
+lcd.setContrast(30);            // Contrast setting
 lcd.print("hello, world!");
 
 
-スレーブアドレスを指定する場合
+When needed to specify the slave address:
 
 ST7032 lcd(0x3E);
 
 
 
 -------------------------------------------------------------
- ファイル構成
+ file structure:
 -------------------------------------------------------------
 
 ST7032\
     keywords.txt
-    ST7032.cpp              ST7032 ライブラリ
-    ST7032.h                ST7032 ライブラリ
+    ST7032.cpp              ST7032 Library
+    ST7032.h                ST7032 Library
     examples\
-        Icon                Strawberry Linux SB1602B 用アイコン表示デモ
+        Icon                Icon display demo for Strawberry Linux SB1602B
         Autoscroll          (*)
         Blink               (*)
         Cursor              (*)
@@ -130,6 +133,6 @@ ST7032\
         setCursor           (*)
         TextDirection       (*)
 
-        (*)…LiquidCrystal liblary を ST032 用に改変
+        (*) examples taken from original Arduino LiquidCrystal liblary modified for ST7032
 
 
