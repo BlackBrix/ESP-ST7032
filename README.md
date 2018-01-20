@@ -60,18 +60,18 @@ MIT
 -------------------------------------------------------------
 
 1) Connect LCD-module and Arduino as follows
-
- ------------------------
-  Arduino        ST7032
- ------------------------
-  3.3V    --+-- VDD  
-            +-- -RES  
-  A4(SDA) --*-- SDA  
-  A5(SCL) --*-- SCL  
-  GND     ----- GND  
   
-  *... 10Kohm pull-up  
- ------------------------
+    ------------------------
+    Arduino        ST7032
+    ------------------------
+    3.3V    --+-- VDD  
+              +-- -RES  
+    A4(SDA) --*-- SDA  
+    A5(SCL) --*-- SCL  
+    GND     ----- GND  
+  
+    *... 10Kohm pull-up  
+    ------------------------
 
 If you want to reliably reset the LCD, connect the RST pin to Arduino's  
 Please control with empty terminals. (Low: reset)  
@@ -97,25 +97,25 @@ There are two types of member functions unique to ST7032:
 
 Easy to use:  
   
-#include <Wire.h>  
-#include <ST7032.h>  
+    #include <Wire.h>  
+    #include <ST7032.h>  
   
-ST7032 lcd;  
+    ST7032 lcd;  
   
-lcd.setContrast(30);            // Contrast setting  
-lcd.print("hello, world!");  
+    lcd.setContrast(30);            // Contrast setting  
+    lcd.print("hello, world!");  
   
   
 When needed to specify the slave address:  
-  
-ST7032 lcd(0x3E);  
+    
+    ST7032 lcd(0x3E);  
   
 
 
 -------------------------------------------------------------
  file structure:
 -------------------------------------------------------------
-
+```
 ST7032\  
     keywords.txt  
     ST7032.cpp              ST7032 Library  
@@ -134,5 +134,5 @@ ST7032\
         TextDirection       (*)  
   
         (*) examples taken from original Arduino LiquidCrystal liblary modified for ST7032  
-
+```
 
