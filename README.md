@@ -15,12 +15,12 @@ http://ore-kb.net/archives/195
  Overview
 -------------------------------------------------------------
 
-I²C LCD display using ST7032i as controller
-It is an Arduino library.
-It is based on the original Arduino LiquidCrystal library source.
-Because it is compatible with the member functions of the original Arduino LiquidCrystal library,
-you can use it just by replacing the class.
-
+I²C LCD display using ST7032i as controller  
+It is an Arduino library.  
+It is based on the original Arduino LiquidCrystal library source.  
+Because it is compatible with the member functions of the original Arduino LiquidCrystal library,  
+you can use it just by replacing the class.  
+  
 Operation has been confirmed with:
 
     SB1602B             Strawberry Linux
@@ -58,8 +58,8 @@ MIT
 -------------------------------------------------------------
  Instructions:
 -------------------------------------------------------------
-
-1) Connect LCD-module and Arduino as follows
+  
+**1) Connect LCD-module and Arduino as follows**
 ``` ------------------------
     Arduino        ST7032
     ------------------------
@@ -75,10 +75,9 @@ MIT
 
 If you want to reliably reset the LCD, connect the RST pin to Arduino's  
 Please control with empty terminals. (Low: reset)  
- 
-2) Copy the ST7032 folder to Arduino's libraries folder  
-
-
+  
+**2) Copy the ST7032 folder to Arduino's libraries folder**  
+  
 There are two types of member functions unique to ST7032:  
 
     constructor
