@@ -60,8 +60,7 @@ MIT
 -------------------------------------------------------------
 
 1) Connect LCD-module and Arduino as follows
-  
-    ------------------------
+``  ------------------------
     Arduino        ST7032
     ------------------------
     3.3V    --+-- VDD  
@@ -72,6 +71,7 @@ MIT
   
     *... 10Kohm pull-up  
     ------------------------
+``
 
 If you want to reliably reset the LCD, connect the RST pin to Arduino's  
 Please control with empty terminals. (Low: reset)  
