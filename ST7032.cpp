@@ -76,7 +76,7 @@ ST7032::ST7032(int i2c_addr)
 , _displaymode(0x00)
 , _i2c_addr((uint8_t)i2c_addr)
 {
-//  begin(16, 1);
+    // empty
 }
 
 void ST7032::begin(uint8_t cols, uint8_t lines, uint8_t dotsize) {
@@ -104,26 +104,24 @@ void ST7032::begin(uint8_t cols, uint8_t lines, uint8_t dotsize) {
   Wire.begin();
   delay(40);               // Wait time >40ms After VDD stable
 
-  // finally, set # lines, font size, etc.
+  // finally, set # lines, font size, etc. (apply the _displayfunction variable which is configured above)
   normalFunctionSet();
 
   extendFunctionSet();
-  command(LCD_EX_SETBIASOSC | LCD_BIAS_1_5 | LCD_OSC_183HZ);            // 1/5bias, OSC=183Hz@3.0V
-  command(LCD_EX_FOLLOWERCONTROL | LCD_FOLLOWER_ON | LCD_RAB_2_00);     // internal follower circuit is turn on
-  delay(200);                                       // Wait time >200ms (for power stable)
+  command(LCD_EX_SETBIASOSC | LCD_BIAS_1_5 | LCD_OSC_183HZ);        // 1/5bias, OSC=183Hz@3.0V
+  command(LCD_EX_FOLLOWERCONTROL | LCD_FOLLOWER_ON | LCD_RAB_2_00); // internal follower circuit is turn on
+  delay(200);                                                       // Wait time >200ms (for power stable)
   normalFunctionSet();
 
   // turn the display on with no cursor or blinking default
-//  display();
-  _displaycontrol   = 0x00;//LCD_DISPLAYON | LCD_CURSOROFF | LCD_BLINKOFF;
+  _displaycontrol   = 0x00;
   setDisplayControl(LCD_DISPLAYON | LCD_CURSOROFF | LCD_BLINKOFF);
 
   // clear it off
   clear();
 
   // Initialize to default text direction (for romance languages)
-//  command(LCD_ENTRYMODESET | _displaymode);
-  _displaymode      = 0x00;//LCD_ENTRYLEFT | LCD_ENTRYSHIFTDECREMENT;
+  _displaymode      = 0x00;
   setEntryMode(LCD_ENTRYLEFT | LCD_ENTRYSHIFTDECREMENT);
 }
 
