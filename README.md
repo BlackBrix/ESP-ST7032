@@ -1,7 +1,8 @@
-forked from weizenbock/ESP-ST7032
-which is forked from tomozh/arduino_ST7032
-
-
+forked from [weizenbock/ESP-ST7032](https://github.com/weizenbock/ESP-ST7032)  
+which is forked from [tomozh/arduino_ST7032](https://github.com/tomozh/arduino_ST7032)  
+  
+  
+the original readme.md is as follows:  
 --------------------------------------------------
 
 ST7032 - Arduino LiquidCrystal compatible library
