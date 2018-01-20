@@ -7,6 +7,10 @@
 
 #define ST7032_I2C_DEFAULT_ADDR     0x3E
 
+// reset pin (optional) (comment out if not used)
+#define EXT_RESET 1                         // is an external reset via the reset pin of the LCD is used ?
+#define EXT_RESET_PIN PD7                   // Controllers port/pin name (or No.) that is used to reset the LCD (Low = reset)
+
 
 // commands
 #define LCD_CLEARDISPLAY        0x01
