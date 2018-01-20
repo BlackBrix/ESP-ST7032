@@ -97,10 +97,10 @@
 
 class ST7032 : public Print {
 public:
-	ST7032(int i2c_addr = ST7032_I2C_DEFAULT_ADDR);
+    ST7032(int i2c_addr = ST7032_I2C_DEFAULT_ADDR);
     void begin(uint8_t cols, uint8_t rows, uint8_t charsize = LCD_5x8DOTS);
     void setContrast(uint8_t cont = DEFAULT_CONTRAST);
-	void setContrast5V(uint8_t cont = DEFAULT_CONTRAST);
+    void setContrast5V(uint8_t cont = DEFAULT_CONTRAST);
     void setIcon(uint8_t addr, uint8_t bit);
     void clear();
     void home();
@@ -134,7 +134,7 @@ private:
     uint8_t _initialized;
     uint8_t _numlines;
     uint8_t _currline;
-	uint8_t _i2c_addr;
+    uint8_t _i2c_addr;
 };
 
 #endif  // __ST7032_H__
