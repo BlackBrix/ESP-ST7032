@@ -39,9 +39,9 @@ What seems to work:
 Change log:
 -------------------------------------------------------------
 
-2014.10.13 Fixed a problem that the contrast value bit 7 affects the BON bit
-2014.08.23 I made it possible to set the I2C address in the constructor
-2013.05.21 1st release
+2014.10.13 Fixed a problem that the contrast value bit 7 affects the BON bit  
+2014.08.23 I made it possible to set the I2C address in the constructor  
+2013.05.21 1st release  
 
 
 -------------------------------------------------------------
