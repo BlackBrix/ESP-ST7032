@@ -90,6 +90,13 @@ void ST7032::begin(uint8_t cols, uint8_t lines, uint8_t dotsize) {
     _displayfunction |= LCD_5x10DOTS;
   }
 
+#ifdef EXT_RESET
+  pinMode(EXT_RESET_PIN, OUTPUT);
+  digitalWrite(EXT_RESET_PIN, LOW);     // low = reset
+  delayMicroseconds(100);               // Wait time >100us after external Reset
+  digitalWrite(EXT_RESET_PIN, HIGH);    // high = normal
+#endif
+  
   Wire.begin();
   delay(40);               // Wait time >40ms After VDD stable
 
