@@ -3,6 +3,10 @@
 
 #include <stdint.h>
 #include <Print.h>
+#include <Wire.h>
+#ifdef __AVR__
+  #include <avr/pgmspace.h>
+#endif
 
 
 #define ST7032_I2C_DEFAULT_ADDR     0x3E
