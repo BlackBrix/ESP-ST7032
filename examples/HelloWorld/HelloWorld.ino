@@ -42,17 +42,15 @@
  */
 
 // include the library code:
-//#include <LiquidCrystal.h>
 #include <Wire.h>
 #include <ST7032.h>
 
-// initialize the library with the numbers of the interface pins
-//LiquidCrystal lcd(12, 11, 5, 4, 3, 2);
+// initialize the library
 ST7032 lcd;
 
 void setup() {
   // set up the LCD's number of columns and rows: 
-  lcd.begin(16, 2);
+  lcd.begin(16, 2);  // 16 chars (columns) in 2 rows
   lcd.setContrast(40);
   // Print a message to the LCD.
   lcd.print("hello, world!");
