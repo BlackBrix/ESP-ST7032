@@ -30,6 +30,13 @@
 #include "Arduino.h"
 
 
+#ifdef USING_WIRE2
+    // using I²C-Interface No.2 (IIC2) of the controller (e.g. for STM32F103):
+    TwoWire Wire__2 (2,I2C_FAST_MODE);
+    #define Wire Wire__2
+#endif
+
+
 // private methods
 
 void ST7032::setDisplayControl(uint8_t setBit) {
