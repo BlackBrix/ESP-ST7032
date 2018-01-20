@@ -15,6 +15,8 @@
 #define EXT_RESET 1                         // is an external reset via the reset pin of the LCD is used ?
 #define EXT_RESET_PIN PD7                   // Controllers port/pin name (or No.) that is used to reset the LCD (Low = reset)
 
+// using I²C-Interface No.2 (IIC2) of the controller (comment out if not used)
+#define USING_WIRE2
 
 // commands
 #define LCD_CLEARDISPLAY        0x01
